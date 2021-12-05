@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NF-Newsfeed</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&family=Raleway:ital,wght@0,400;0,500;0,600;1,700&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="open-slide">
+      <a href="#" onclick="openSlideMenu()">
+        <svg width="30" height="30" >
+          <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+          <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+          <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+        </svg>
+      </a>
+    </span>
+
+        <ul class="navbar-nav">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="notification.html">Notifications</a></li>
+
+        </ul>
+    </nav>
+
+    <div id="friend-menu" class="friend-nav">
+        <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+        <div class="friend">
+            <img class="friend-icon" src="Res/img_avatar2.png" alt="Avatar">
+            <div class="friend-content">
+                <a href="#" class="friend-name">Michaelangelo</a>
+                <p class="friend-textbox"> Online </p>
+                <button id="mikey-btn" class="friend-btn">view</button>
+            </div>
+
+        </div>
+        <div class="friend">
+            <img class="friend-icon" src="Res/img_avatar.png" alt="Avatar">
+            <div class="friend-content">
+                <a href="#" class="friend-name">Leonardo</a>
+                <p class="friend-textbox"> Online </p>
+                <button id="leo-btn" class="friend-btn">view</button>
+            </div>
+
+        </div>
+        <div class="friend">
+            <img class="friend-icon" src="Res/img_avatar2.png" alt="Avatar">
+            <div class="friend-content">
+                <a href="#" class="friend-name">Raphael</a>
+                <p class="friend-textbox"> Online</p>
+                <button id="raph-btn" class="friend-btn">View</button>
+            </div>
+
+        </div>
+
+
+        <div class="friend">
+            <img class="friend-icon" src="Res/download.jpg" alt="Avatar">
+            <div class="friend-content">
+                <a href="#" class="friend-name">Donatello</a>
+                <p class="friend-textbox"> Online</p>
+                <button id="donny-btn" class="friend-btn">View</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <h1 id="page-heading" class="page-heading"> Newsfeed </h1>
+    <div id="main">
+
+
+        <!-- New post -->
+        <div class="notes-wrapper">
+            <div class="saver-wrap" contenteditable="false">
+                <div class="notes-dot" contenteditable="false"></div>
+                <div class="rest" contenteditable="false"></div>
+            </div>
+            <div class="title" contenteditable="true" onpaste="OnPaste_StripFormatting(this, event);">
+                note title
+            </div>
+            <div class="content" contenteditable="true" onpaste="OnPaste_StripFormatting(this, event);">
+                Start typing...
+            </div>
+            <div class="line"></div>
+            <div class="comment"></div>
+            <input type="file" onchange="previewFile()" id="selectedFile" style="display: none;" />
+            <div class="getImg" onclick="document.getElementById('selectedFile').click();">
+                <i class="material-icons">insert_photo</i>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="container">
+            <div id="img-container" class="img-container">
+                <img id="random-image" src="Res/image.jpg">
+            </div>
+            <div class="content-container">
+                <h2>Following</h2>
+                <div id="new-following">
+                    <p>See who follows who.</p>
+
+                </div>
+
+                <div class="button-row">
+                    <a href="#" id="comment-button" class="btn"><i class="fa fa-comment" aria-hidden="true" ></i></a>
+                    <a href="#" id="like-btn" class="btn"><i onclick="myFunction(this)" class="fa fa-heart"></i></a>
+                    <a href="#" id="delete-btn" class="btn"><i class="fa fa-ban" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-footer">
+                    <span class="icon icon-time">0 min</span>
+                    <span class="icon icon-comment"><a href="#">1 comments</a></span>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="container">
+            <div class="img-container">
+                <img id="random-image" src="Res/download (1).jpg">
+            </div>
+            <div class="content-container">
+                <h2>Photo</h2>
+                <div id="new-photo">
+                    <p>See what your friends are upto.</p>
+                </div>
+                <div class="button-row">
+                    <a href="#" id="comment-btn" class="btn"><i class="fa fa-comment" aria-hidden="true"></i></a>
+                    <a href="#" id="like-btn" class="btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    <a href="#" id="delete-btn" class="btn"><i class="fa fa-ban" aria-hidden="true"></i></a>
+                </div>
+                <div class="card-footer">
+                    <span class="icon icon-time">6 min</span>
+                    <span class="icon icon-comment"><a href="#">0 comments</a></span>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="Script.js"></script>
+</body>
+
+</html>
