@@ -30,18 +30,21 @@ btnmikey.addEventListener('click', () => {
     title.innerHTML = '@Michaelangelo';
     newphoto.innerHTML = 'Michaelangelo uploaded a new photo.';
     newfollowing.innerHTML = 'Michaelangelo was followed by April.';
+    closeSlideMenu()
 });
 btnleo.addEventListener('click', () => {
     title.innerHTML = '@Leonardo';
 
     newphoto.innerHTML = 'Leonardo uploaded a new photo.';
     newfollowing.innerHTML = 'Leonardo was followed by April.';
+    closeSlideMenu()
 });
 btnraph.addEventListener('click', () => {
     title.innerHTML = '@Raphael';
 
     newphoto.innerHTML = 'Raphael uploaded a new photo.';
     newfollowing.innerHTML = 'Raphael was followed by April.';
+    closeSlideMenu()
 
 });
 btndonny.addEventListener('click', () => {
@@ -49,6 +52,7 @@ btndonny.addEventListener('click', () => {
 
     newphoto.innerHTML = 'Donatello uploaded a new photo.';
     newfollowing.innerHTML = 'Donatello was followed by April.';
+    closeSlideMenu()
 });
 
 
